@@ -1,10 +1,557 @@
-//27번
+//천기누설 3번
 public class Java0609 {
     public static void main(String[] args){
-        
+        int a = 17;
+        a+=1;
+        a-=2;
+        a*=3;
+        a/=4;
+        a%=5;
+        System.out.print(a);
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//천기누설 2번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int a = 17;
+//         a+=1;
+//         a-=2;
+//         a*=3;
+//         a/=4;
+//         a%=5;
+//         System.out.print(a);
+//     }
+// }
+
+
+//천기누설 1번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int x=1;
+//         int tX=0, t_X=0;
+//         tX = (x>0)?x:-x;
+//         if(x>0)
+//             t_X = x;
+//         else
+//             t_X = -x;
+//         System.out.println(tX + " " + t_X); 
+//     }
+// }
+
+
+//천기누설 예상문제
+//=========================================================================
+
+
+//51번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Tri t = Tri.values()[Tri.A.name().length()];
+//         System.out.print(t.code());
+//     }
+// }
+// enum Tri{
+//     A("A"), B("AB"), C("ABC");
+//     private String code;
+//     Tri(String code) {
+//         this.code = code;
+//     }
+//     public String code(){
+//         return code;
+//     }
+// }
+
+
+
+//50번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int x=7, y=4, z;
+//         z = y%3<3 ? 2: 1;
+//         z = z&(z>>1);
+//         z = (x>5&&z<=3) ? (z*x) : (z/x);
+//         System.out.printf("%d", z);
+//     }
+// }
+//</> Java 에서의 printf: 형식(format)지정 가능
+
+
+//49번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Sq sq = new Sq(10);
+//         sq.getArea();
+//     }
+// }
+// class Rec{
+//     int x, y;
+//     Rec(int x, int y){
+//         this.x = x;
+//         this.y = y;
+//     }
+//     int getArea(){
+//         return x*y;
+//     }
+// }
+// class Sq extends Rec{
+//     Sq(int s){
+//         super(s, s);
+//     }
+//     int getSqArea(){
+//         return s*s;
+//     }
+// }
+
+
+
+//48번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Student s = new Student();
+//         s.introduce();
+//     }
+// }
+// interface Person{
+//     void introduce();
+// }
+// class Student implements Person {
+//     private String name;
+    
+//     public Student() {
+//         this.name = "Yuna";
+//     }
+//     public void introduce(){
+//         System.out.println("Hello, my name is "+name);
+//     }
+// }
+
+
+//47번
+// public class Java0609 {
+//     public static class BO{
+//         public int v;
+//         public BO(int v){
+//             this.v = v;
+//         }
+//     }
+//     public static void main(String[] args){
+//         BO a = new BO(1);
+//         BO b = new BO(2);
+//         BO c = new BO(3);
+//         BO[] arr = {a,b,c};
+//         BO t = arr[0];
+//         arr[0] = arr[2];
+//         arr[2] = t;
+//         arr[1].v = arr[0].v;
+//         System.out.println(a.v + "a" + b.v + "b" + c.v);
+//     }
+// }
+
+
+//46번
+// public class Java0609 {
+//     public static class Parent{
+//         public int x(int i){return i+2;}
+//         public static String id(){return "P";}
+//     }
+//     public static class Child extends Parent{
+//         public int x(int i){return i+3;}
+//         public String x(String s){return s+"R";}
+//         public static String id(){return "C";}
+//     }
+//     public static void main(String[] args){
+//         Parent re = new Child();
+//         System.out.println(re.x(2) + re.id());
+//     }
+// }
+
+
+
+//45번
+// public class Java0609 {
+//     static interface F {
+//         int apply(int x);
+//     }
+//     public static int run(F f){
+//         try{
+//             return f.apply(3);
+//         }
+//         catch(Exception e){
+//             return 7;
+//         }
+//     }
+//     public static void main(String[] args){
+//         F f = (x)->{
+//             if(x>2){
+//                 throw new RuntimeException();
+//             }
+//             return x*2;
+//         };
+//         System.out.print(run(f) + run((int n)->n+9));
+//     }
+// }
+
+
+//44번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         String data[] = {"A"};
+//         String s = "B";
+//         fn(data, s);
+//         System.out.print(data[0]+s);
+//     }
+//     public static void fn(String[] data, String s){
+//         data[0] = s;
+//         s = "Z";
+//     }
+// }
+
+
+//43번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         System.out.println(calc("5"));
+//     }
+//     static int calc(int value){
+//         if(value<=1) return value;
+//         return calc(value-1)+calc(value-2);
+//     }
+//     static int calc(String str){
+//         int value = Integer.valueOf(str);
+//         if(value<=1) return value;
+//         return calc(value-1)+calc(value-3);
+//     }
+// }
+
+
+
+//42번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int[] values = {3,5,8,12,17};
+//         System.out.println(fn(values, 0, values.length-1));
+//     }
+//     static int fn(int[] a, int st, int end){
+//         if(st>=end) return 0;
+//         int mid = (st+end)/2;
+//         return a[mid]+Math.max(fn(a, st, mid), fn(a, mid+1, end));
+//     }
+// }
+
+
+
+//41번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         new Child();
+//         System.out.println(Parent.total);
+//     }
+// }
+// class Parent{
+//     static int total = 0;
+//     int v = 1;
+//     public Parent(){
+//         total += (++v);
+//         show();
+//     }
+//     public void show(){
+//         total += total;
+//     }
+// }
+// class Child extends Parent{
+//     int v = 10;
+//     public Child(){
+//         v+=2;
+//         total += v++;
+//         show();
+//     }
+//     @Override
+//     public void show(){
+//         total += total*2;
+//     }
+// }
+
+
+//40번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int a=5, b=0;
+//         try{
+//             System.out.print(a/b);
+//         }
+//         catch(ArithmeticException e){
+//             System.out.print("출력1");
+//         }
+//         catch(ArrayIndexOutOfBoundsException e){
+//             System.out.print("출력2");
+//         }
+//         catch(NumberFormatException e){
+//             System.out.print("출력3");
+//         }
+//         catch(Exception e){
+//             System.out.print("출력4");
+//         }
+//         finally{
+//             System.out.print("출력5");
+//         }
+//     }
+// }
+
+
+//39번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         new Collection<>(0).print();
+//     }
+// }
+// class Printer{
+//     void print(Integer x){
+//         System.out.print("A" + x);
+//     }
+//     void print(Object x){
+//         System.out.print("B" + x);
+//     }
+//     void print(Number x){
+//         System.out.print("C" + x);
+//     }
+// }
+// class Collection<T> {
+//     T value;
+//     public Collection(T t){
+//         value = t;
+//     }
+//     public void print(){
+//         new Printer().print(value);
+//     }
+// }
+
+
+//38번
+// public class Java0609 {
+//     public static void main(String[] args){
+//           int sum = 0;
+//           try {
+//             func();
+//           }
+//           catch (NullPointerException e){
+//             sum += 1;
+//           }
+//           catch (Exception e) {
+//             sum += 10;
+//           }
+//           finally {
+//             sum += 100;
+//           }
+//           System.out.print(sum);
+//     }
+//     static void func() throws Exception{
+//         throw new NullPointerException();
+//     }
+// }
+
+
+//37번
+// public class Java0609 {
+//     public static void main(String[] args){
+//           Base b = new Derivate();
+//           Derivate d= new Derivate();
+//           System.out.print(b.getX() + b.x + d.getX() + d.x);
+//     }
+// }
+// class Base{
+//     int x = 3;
+//     int getX(){
+//         return x*2;
+//     }
+// }
+// class Derivate extends Base {
+//     int x = 7;
+//     int getX() {
+//         return x*3;
+//     }
+// }
+
+
+
+//36번
+// public class Java0609 {
+//     static void func(String[] sM, int size){
+//         for(int i=1; i<size; i++){
+//             if(sM[i-1].equals(sM[i]))
+//                 System.out.print("O");
+//             else
+//                 System.out.print("N");
+//         }
+//         for(String m:sM)
+//             System.out.print(m);
+//     }
+//     public static void main(String[] args){
+//           String[] sM = new String[3];
+//           sM[0] = "A";
+//           sM[1] = "A";
+//           sM[2] = new String("A");
+//           func(sM, 3);
+//     }
+// }
+
+
+//35번
+// public class Java0609 {
+//     public static String fn(String str, int index, boolean[] seen){
+//         if(index < 0) return "";
+//         char c = str.charAt(index);
+//         String result = fn(str, index-1, seen);
+//         if(!seen[c]){
+//             seen[c] = true;
+//             return c+result;
+//         }
+//         return result;
+//     }
+//     public static void main(String[] args){
+//         String str = "abacabcd";
+//         int length = str.length();
+//         boolean[] seen = new boolean[256];
+//         System.out.print(fn(str, length-1, seen));    
+//     }
+// }
+
+
+//34번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int a[] = {1,2,3,4,5,6,7,8,9};
+//         B x = new B();
+//         System.out.print(x.sum(a, true) + ", " + x.sum(a, false));
+//     }
+// }
+// interface A{
+//     int sum(int[] a, boolean odd);
+// }
+// class B implements A{
+//     public int sum(int[] a, boolean odd){
+//         int result = 0;
+//         for(int i=0; i<a.length; i++){
+//             if((odd && a[i]%2!=0) || (!odd && a[i]%2==0))
+//                 result += a[i];
+//         }
+//         return result;
+//     }
+// }
+
+
+//30번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Sjb s1 = Sjb.get();
+//         s1.connt();
+//         Sjb s2 = Sjb.get();
+//         s2.connt();
+//         Sjb s3 = Sjb.get();
+//         s3.connt();
+//         s1.connt();
+//         System.out.print(s1.getCount());
+//     }
+// }
+// class Sjb {
+//     static private Sjb instance = null;
+//     private int count = 0;
+//     static public Sjb get(){
+//         if(instance == null){
+//             instance = new Sjb();
+//         }
+//         return instance;
+//     }
+//     public void connt(){count++;}
+//     public int getCount(){ return count;}
+// }
+
+
+//29번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Person p = new Person("soojebi");    
+//     }
+// }
+// class Person{
+//     private String name;
+//     public Person(String val){
+//         name = val;
+//     }
+//     public static String get(){
+//         return name;
+    
+//     }
+//     public void print(){
+//         System.out.println(name);
+//     }
+// }
+
+
+
+//28번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int sum = fact(7);
+//         System.out.println(sum);
+//     }
+//     public static int fact(int n){
+//         if(n==1)
+//             return 1;
+//         else
+//             return n*fact(n-1);
+//     }
+// }
+//자바는 객체지향 언어. 즉, 객체가 없으면, 함수를 호출할 때도 어떤 객체의 함수를 호출해야할지 알지 못한다.
+//따라서 객체를 만들어줘야함.
+//이 역할을 static이 해준다. 객체를 만들지 않고도 사용할 수 있는 멤버.
+
+
+
+//27번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Parent c = new Child();
+//         c.paint();
+//         c.draw();
+//     }
+// }
+// class Parent{
+//     public void paint(){
+//         System.out.print("A");
+//         draw();
+//     }
+//     public void draw(){
+//         System.out.print("B");
+//         draw();
+//     }
+// }
+// class Child extends Parent{
+//     public void paint(){
+//         super.draw();
+//         System.out.print("C");
+//         this.draw();
+//     }
+//     public void draw(){
+//         System.out.print("D");
+//     }
+// }
 
 
 
