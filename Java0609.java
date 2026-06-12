@@ -1,29 +1,217 @@
-//천기누설 3번
+//천기누설 10번
 public class Java0609 {
+    public static void select(int arr[], int n){
+        int i, j, min_idx, temp;
+        for(i=0; i<n-1; i++){
+            min_idx = i;
+            for(j=i+1; j<n; j++){
+                if(arr[j] < arr[min_idx])
+                    min_idx = j;
+            }
+            temp = arr[i];
+            arr[i] = arr[min_idx];
+            arr[min_idx] = temp;
+        }
+    }
     public static void main(String[] args){
-        int a = 17;
-        a+=1;
-        a-=2;
-        a*=3;
-        a/=4;
-        a%=5;
-        System.out.print(a);
+        int arr[] = {2,4,7,1};
+        int i, n=4;
+        select(arr, n);
+        for(i=0; i<n; i++)
+            System.out.print(arr[i]);
     }
 }
 
 
+//천기누설 10번
+// public class Java0609 {
+//     public static void select(int arr[], int n){
+//         int i, j, min_idx, temp;
+//         for(i=0; i<n-1; i++){
+//             min_idx = i;
+//             for(j=i+1; j<n; j++){
+//                 if(arr[j] < arr[min_idx])
+//                     min_idx = j;
+//             }
+//             temp = arr[i];
+//             arr[i] = arr[min_idx];
+//             arr[min_idx] = temp;
+//         }
+//     }
+//     public static void main(String[] args){
+//         int arr[] = {2,4,7,1};
+//         int i, n=4;
+//         select(arr, n);
+//         for(i=0; i<n; i++)
+//             System.out.print(arr[i]);
+//     }
+// }
 
 
 
+//천기누설 9번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Parent a = new Parent();
+//         a.fn2();
+//         new Child(5).fn1();
+//     }
+// }
+// class Parent{
+//     public Parent(){
+//         this(3);
+//         System.out.print("A");
+//     }
+//     public Parent(int x){
+//         System.out.print("B");
+//     }
+//     public void fn1(){
+//         System.out.print("C");
+//     }
+//     public void fn2(){
+//         System.out.print("D");
+//     }
+// }
+// class Child extends Parent{
+//     public Child(){
+//         System.out.print("E");
+//     }
+//     public Child(int x){
+//         this();
+//         System.out.print("F");
+//     }
+//     public void fn1(){
+//         System.out.print("G");
+//     }
+//     public void fn2(){
+//         System.out.print("H");
+//     }
+// }
 
 
 
+//천기누설 8번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int x = 1;
+//         System.out.println(!(x==1));
+//         System.out.println((x!=0)||(x>0));
+//         System.out.println(x<<2);
+//         System.out.println(x&2);
+//         System.out.println(x%=3);
+//     }
+// }
+
+
+//천기누설 7번
+// public class Java0609 {
+//     public static int a;
+//     public static int fn(int t){
+//         a+=t;
+//         return a;
+//     }
+//     public static void main(String[] args){
+//         for(int i=0; i<5; i++)
+//             fn(i);
+//         System.out.println(a);
+//     }
+// }
+
+
+//천기누설 6번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         Parent p = new Child();
+//         p.meth();
+//     }
+// }
+// class Parent{
+//     protected String str;
+//     public void meth(){
+//         print();
+//     }
+//     public void print(){
+//         System.out.print(str);
+//     }
+// }
+// class Child extends Parent{
+//     private String str;
+//     public void print(){
+//         str = "Apple";
+//         super.str = "Berry";
+//         super.print();
+//         System.out.print(str);
+//     }
+// }
 
 
 
+//천기누설 5번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int [][]arr = new int[3][3];
+//         init(arr);
+//         hourGlass(arr);
+//         arrayPrint(arr);
+//     }
+//     public static void init(int arr[][]){
+//         for(int i=0; i<arr.length; i++){
+//             for(int j=0; j<arr[0].length; j++){
+//                 arr[i][j] = 0;
+//             }
+//         }
+//     }
+//     public static void hourGlass(int arr[][]){
+//         int v = 0;
+//         for(int i=0; i<arr.length; i++){
+//             for(int j=i; j<arr[0].length; j++){
+//                 arr[i][j] = ++v;
+//             }
+//         }
+//     }
+//     public static void arrayPrint(int arr[][]){
+//         for(int i=0; i<arr.length; i++){
+//             for(int j=0; j<arr[0].length; j++){
+//                 if(arr[i][j]==0)
+//                     System.out.print(" ");
+//                 else
+//                     System.out.print(arr[i][j]);
+//             }
+//             System.out.println("");
+//         }  
+//     }
+// }
 
 
 
+//천기누설 4번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int []a = new int[8];
+//         int i=0, n=11;
+//         while(n>0){
+//             a[i++] = n%2;
+//             n/=2;
+//         }
+//         for(i=7; i>=0; i--)
+//             System.out.print(a[i]);
+//     }
+// }
+
+
+
+//천기누설 3번
+// public class Java0609 {
+//     public static void main(String[] args){
+//         int a = 26,  b = 91, i=0, g=0;
+//         int min = a<b?a:b;
+//         for(i=2; i<min; i++){
+//             if(a%i==0 && b%i==0)
+//                 g=i;
+//         }
+//         System.out.println(g);
+//     }
+// }
 
 
 
